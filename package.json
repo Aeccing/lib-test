@@ -5,10 +5,10 @@
   "module": "es/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "dev": "tsc --outDir lib --module CommonJS --target ES2017 --watch",
     "build:lib": "tsc --outDir lib --module commonjs && npm run copy:lib",
     "build:es": "tsc --outDir es && npm run copy:es",
     "build": "npm run build:lib && npm run build:es",
-    "build:watch": "tsc --target ES2019 --watch",
     "copy:lib": "copyfiles -u 1 './src/**/*.less' ./lib",
     "copy:es": "copyfiles -u 1 './src/**/*.less' ./es",
     "clear": "rm -rf lib es",
