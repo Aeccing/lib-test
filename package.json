@@ -1,0 +1,35 @@
+{
+  "name": "lib-test",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build:lib": "tsc --outDir lib --module commonjs && npm run copy:lib",
+    "build:es": "tsc --outDir es && npm run copy:es",
+    "build": "npm run build:lib && npm run build:es",
+    "build:watch": "tsc --target ES2019 --watch",
+    "copy:lib": "copyfiles -u 1 './src/**/*.less' ./lib",
+    "copy:es": "copyfiles -u 1 './src/**/*.less' ./es",
+    "clear": "rm -rf lib es",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx ./",
+    "eslint:fix": "npm run eslint -- --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "description": ""
+}

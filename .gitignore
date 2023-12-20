@@ -1,0 +1,17 @@
+/node_modules 
+/yarn.lock
+/package-lock.json
+
+.DS_Store
+npm-debug.log
+lerna-debug.log
+npm-debug.log*
+lib/
+dist/
+es/
+build/
+coverage/
+node_modules/
+examples/test
+.idea/
+.history/
